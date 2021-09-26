@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TMDB</title>
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <!-- Bootstrap Icon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <!-- style grobal -->
+    <link rel="stylesheet" href="styles.css">    
+</head>
+<body>
+    <div class="container-fluid p-0 bg-dark">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark w-100 
+                    d-flex justify-content-between p-3"
+                style="z-index: 2;">
+            <div class="d-flex">
+                <a class="navbar-brand" href="#">Logo</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse d-flex" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">หน้าหลัก</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">รายการทีวี</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">ภาพยนต์</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">มาใหม่และกำลังฮิต</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">รายการของฉัน</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">ดูอีกครั้ง</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="d-flex">
+                <form class="d-flex">
+                    <input class="form-control form-outline-dark me-2" type="search"
+                        placeholder="ชื่อเนื้อหา บุคคล หมวดหมู่" aria-label="Search" id="searchKeyWord">
+                    <button class="btn btn-dark" type="submit" id="btnSearch"><i class="bi bi-search"></i></button>
+                </form>
+
+                <div class="m-1 px-2">
+                    <i class="bi bi-bell-fill" style="color: white;font-size: 1.25rem;"></i>
+                </div>
+
+                <div class="dropdown">
+                    <button class="btn btn-dark dropdown-toggle m-0 p-0 pe-2 bg-transparent" type="button"
+                        id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="img/avatar.png" class="m-0 p-0" style="width:2.5rem">
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-dark" aria-labelledby="dropdownMenuButton1">
+                        <li><a class="dropdown-item" href="#">จัดการโปรไฟล์</a></li>
+                        <hr>
+                        <li><a class="dropdown-item" href="#">บัญชี</a></li>
+                        <li><a class="dropdown-item" href="#">ศูนย์ช่วยเหลือ</a></li>
+                        <li><a class="dropdown-item" href="#">ออกจากระบบ</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="container-fluid d-flex flex-wrap justify-content-evenly text-light" id="showWhatYouSearch">
+            <!-- SHOW WHAT U SEARCH FOR HERE!!! -->
+
+        </div>
+        
+        <div class="container-fluid bg-dark text-light footer p-4">
+            <div class="d-flex justify-content-center">
+                <i class="p-2 h2 bi bi-facebook"></i>
+                <i class="p-2 h2 bi bi-instagram"></i>
+                <i class="p-2 h2 bi bi-twitter"></i>
+                <i class="p-2 h2 bi bi-youtube"></i>
+            </div>
+            <div class="footer-list d-flex justify-content-center">
+                <ul style="list-style-type: none;">
+                    <li>เสียงและคำบรรยาย</li>
+                    <li>ศูนย์สื่อมวลชน</li>
+                    <li>ความเป็นส่วนตัว</li>
+                    <li>ติดต่อเรา</li>
+                </ul>
+
+                <ul style="list-style-type: none;">
+                    <li>คำอธิบายเสียง</li>
+                    <li>นักลงทุนสัมพันธ์</li>
+                    <li>ประกาศแจ้งกฎหมาย</li>
+                </ul>
+
+                <ul style="list-style-type: none;">
+                    <li>ศูนย์ช่วยเหลือ</li>
+                    <li>ตำแหน่งงาน</li>
+                    <li>การติดตั้งคุกกี้</li>
+                </ul>
+
+                <ul style="list-style-type: none;">
+                    <li>บัตรของขวัญ</li>
+                    <li>ข้อกำหนดการใช้งาน</li>
+                    <li>ข้อมูลบริษัท</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="search.js"></script>
+</body>
+</html>

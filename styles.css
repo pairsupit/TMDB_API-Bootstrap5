@@ -1,0 +1,23 @@
+body {
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+.card {
+    position: relative;
+    z-index: 1;
+    transition: .5s;
+}
+.card:hover{
+    transform: scale(1.2);
+}
+
+.slick-next:hover,
+.slick-prev:hover {
+    width: 7rem;
+    height: 100%;
+    background-color: black;
+    color: white;
+    opacity: 0.75;
+    z-index: 1;
+}
