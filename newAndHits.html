@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TMDB</title>
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <!-- Bootstrap Icon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <!-- slick library -->
+    <link rel="stylesheet" type="text/css" href="slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css" />
+    <!-- JQuery -->
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="slick/slick.min.js"></script>
+    <!-- style grobal -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark w-100 
+                    d-flex justify-content-between position-sticky p-3" style="z-index: 2;">
+        <div class="d-flex">
+            <a class="navbar-brand">Logo</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse d-flex" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="/home.html">หน้าหลัก</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="tv.html">รายการทีวี</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="movie.html">ภาพยนต์</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="newAndHits.html">มาใหม่และกำลังฮิต</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="myList.html">รายการของฉัน</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="watchAgain.html">ดูอีกครั้ง</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="d-flex">
+            <form class="d-flex">
+                <input class="form-control form-outline-dark me-2" type="search"
+                    placeholder="ชื่อเนื้อหา บุคคล หมวดหมู่" aria-label="Search" id="searchKeyWord">
+                <button class="btn btn-dark" type="submit" id="btnSearch"><i class="bi bi-search"></i></button>
+            </form>
+
+            <div class="m-1 px-2">
+                <i class="bi bi-bell-fill" style="color: white;font-size: 1.25rem;"></i>
+            </div>
+
+            <div class="dropdown">
+                <button class="btn btn-dark dropdown-toggle m-0 p-0 pe-2 bg-transparent" type="button"
+                    id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src="img/avatar.png" class="m-0 p-0" style="width:2.5rem">
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-dark" aria-labelledby="dropdownMenuButton1">
+                    <li><a class="dropdown-item" href="#">จัดการโปรไฟล์</a></li>
+                    <hr>
+                    <li><a class="dropdown-item" href="#">บัญชี</a></li>
+                    <li><a class="dropdown-item" href="#">ศูนย์ช่วยเหลือ</a></li>
+                    <li><a class="dropdown-item" id="logoutBtn">ออกจากระบบ</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid bg-dark p-0 m-0" id="hitList">
+        <!-- SHOW HIT LIST HERE -->
+
+        <!--HIT TODAY-->
+        <div class="container-fluid" id="sliderMovieToday"></div>
+        <div class="container-fluid" id="slidertvToday"></div>
+        <!--HIT TODAY-->
+
+        <!--HIT THIS WEEK-->
+        <div class="container-fluid" id="sliderMovie"></div>
+        <div class="container-fluid" id="slidertv"></div>
+        <!--HIT THIS WEEK-->
+
+    </div>
+
+    <div class="container-fluid bg-dark text-light footer p-4">
+        <div class="d-flex justify-content-center">
+            <i class="p-2 h2 bi bi-facebook"></i>
+            <i class="p-2 h2 bi bi-instagram"></i>
+            <i class="p-2 h2 bi bi-twitter"></i>
+            <i class="p-2 h2 bi bi-youtube"></i>
+        </div>
+        <div class="footer-list d-flex justify-content-center">
+            <ul style="list-style-type: none;">
+                <li>เสียงและคำบรรยาย</li>
+                <li>ศูนย์สื่อมวลชน</li>
+                <li>ความเป็นส่วนตัว</li>
+                <li>ติดต่อเรา</li>
+            </ul>
+
+            <ul style="list-style-type: none;">
+                <li>คำอธิบายเสียง</li>
+                <li>นักลงทุนสัมพันธ์</li>
+                <li>ประกาศแจ้งกฎหมาย</li>
+            </ul>
+
+            <ul style="list-style-type: none;">
+                <li>ศูนย์ช่วยเหลือ</li>
+                <li>ตำแหน่งงาน</li>
+                <li>การติดตั้งคุกกี้</li>
+            </ul>
+
+            <ul style="list-style-type: none;">
+                <li>บัตรของขวัญ</li>
+                <li>ข้อกำหนดการใช้งาน</li>
+                <li>ข้อมูลบริษัท</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- modal willl be displlay here -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content bg-dark text-light position-relative" style="z-index:1">
+
+                <button type="button" class="btn-close btn-close-dark position-absolute end-0 p-3" style="z-index: 2"
+                    data-bs-dismiss="modal" aria-label="Close"
+                    onclick="window.location = window.location.origin + window.location.pathname"></button>
+
+                <div class="modal-body p-0">
+                    <img src="img/avatar.png" class="w-100" style="width: 50rem; height:20rem; object-fit:cover;">
+                    <div class="p-3">
+                        <div class="position-relative" style="z-index:3">
+                            <button type="button"
+                                class="btn btn-secondary rounded-circle text-dark m-0 position-absolute end-0 addlist"
+                                style="z-index: 4" id="addListBtn"><i class="bi bi-plus-lg"></i></button>
+                            <h2 id="title">title</h2>
+                        </div>
+                        <div>
+                            <h4>overview</h4>
+                            <p id="overview">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam delectus
+                                sint assumenda, consectetur molestias possimus deserunt, omnis praesentium error commodi
+                                cupiditate temporibus totam iusto nobis ad. Ducimus quos placeat autem?</p>
+                        </div>
+                        <div>
+                            <h4>Rated : <span id="vote"></span></h4>
+                        </div>
+                        <div>
+                            <h4>Category</h4>
+                            <p id="genre"></p>
+                        </div>
+                        <div>
+                            <h4>ระดับความเหมาะสม : <span id="rate"></span></h4>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <script src="Hit-movie-today.js"></script>
+        <script src="Hit-tv-today.js"></script>
+        <script src="Hit-movie-this-week.js"></script>
+        <script src="Hit-tv-this-week.js"></script>
+        <script src="search.js"></script>
+        <script src="logout.js"></script>
+        <script src="addList.js"></script>
+
+</body>
+
+</html>
